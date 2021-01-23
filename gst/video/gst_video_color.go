@@ -68,18 +68,18 @@ const (
 	TransferLog316     TransferFunction = C.GST_VIDEO_TRANSFER_LOG316       // (10) – Logarithmic transfer characteristic 316.22777:1 range (100 * sqrt(10) : 1)
 	TransferBT202012   TransferFunction = C.GST_VIDEO_TRANSFER_BT2020_12    // (11) – Gamma 2.2 curve with a linear segment in the lower range. Used for BT.2020 with 12 bits per component. Since: 1.6
 	TransferAdobeRGB   TransferFunction = C.GST_VIDEO_TRANSFER_ADOBERGB     // (12) – Gamma 2.19921875. Since: 1.8
-	TransferBT202010   TransferFunction = C.GST_VIDEO_TRANSFER_BT2020_10    // (13) – Rec. ITU-R BT.2020-2 with 10 bits per component. (functionally the same as the values GST_VIDEO_TRANSFER_BT709 and GST_VIDEO_TRANSFER_BT601). Since: 1.18
-	TransferSMPTE2084  TransferFunction = C.GST_VIDEO_TRANSFER_SMPTE2084    // (14) – SMPTE ST 2084 for 10, 12, 14, and 16-bit systems. Known as perceptual quantization (PQ) Since: 1.18
-	TransferARIBSTDB67 TransferFunction = C.GST_VIDEO_TRANSFER_ARIB_STD_B67 // (15) – Association of Radio Industries and Businesses (ARIB) STD-B67 and Rec. ITU-R BT.2100-1 hybrid loggamma (HLG) system Since: 1.18
-	TransferBT601      TransferFunction = C.GST_VIDEO_TRANSFER_BT601        // (16) – also known as SMPTE170M / ITU-R BT1358 525 or 625 / ITU-R BT1700 NTSC
+	// TransferBT202010   TransferFunction = C.GST_VIDEO_TRANSFER_BT2020_10    // (13) – Rec. ITU-R BT.2020-2 with 10 bits per component. (functionally the same as the values GST_VIDEO_TRANSFER_BT709 and GST_VIDEO_TRANSFER_BT601). Since: 1.18
+	// TransferSMPTE2084  TransferFunction = C.GST_VIDEO_TRANSFER_SMPTE2084    // (14) – SMPTE ST 2084 for 10, 12, 14, and 16-bit systems. Known as perceptual quantization (PQ) Since: 1.18
+	// TransferARIBSTDB67 TransferFunction = C.GST_VIDEO_TRANSFER_ARIB_STD_B67 // (15) – Association of Radio Industries and Businesses (ARIB) STD-B67 and Rec. ITU-R BT.2100-1 hybrid loggamma (HLG) system Since: 1.18
+	// TransferBT601      TransferFunction = C.GST_VIDEO_TRANSFER_BT601        // (16) – also known as SMPTE170M / ITU-R BT1358 525 or 625 / ITU-R BT1700 NTSC
 )
 
 // Pre-defined colorimetries
 const (
-	ColorimetryBT2020    string = C.GST_VIDEO_COLORIMETRY_BT2020
-	ColorimetryBT202010  string = C.GST_VIDEO_COLORIMETRY_BT2020_10
-	ColorimetryBT2100HLG string = C.GST_VIDEO_COLORIMETRY_BT2100_HLG
-	ColorimetryBT2100PQ  string = C.GST_VIDEO_COLORIMETRY_BT2100_PQ
+	// ColorimetryBT2020    string = C.GST_VIDEO_COLORIMETRY_BT2020
+	// ColorimetryBT202010  string = C.GST_VIDEO_COLORIMETRY_BT2020_10
+	// ColorimetryBT2100HLG string = C.GST_VIDEO_COLORIMETRY_BT2100_HLG
+	// ColorimetryBT2100PQ  string = C.GST_VIDEO_COLORIMETRY_BT2100_PQ
 	ColorimetryBT601     string = C.GST_VIDEO_COLORIMETRY_BT601
 	ColorimetryBT709     string = C.GST_VIDEO_COLORIMETRY_BT709
 	ColorimetrySMPTE240M string = C.GST_VIDEO_COLORIMETRY_SMPTE240M

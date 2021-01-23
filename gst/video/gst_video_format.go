@@ -35,7 +35,7 @@ import (
 	"runtime"
 	"unsafe"
 
-	"github.com/tinyzimmer/go-gst/gst"
+	//"github.com/tinyzimmer/go-gst/gst"
 )
 
 // Format is an enum value describing the most common video formats.
@@ -129,19 +129,19 @@ const (
 	FormatY410       Format = C.GST_VIDEO_FORMAT_Y410        // (83) – packed 4:4:4 YUV, 10 bits per channel(A-V-Y-U...) (Since: 1.16)
 	FormatVUYA       Format = C.GST_VIDEO_FORMAT_VUYA        // (84) – packed 4:4:4 YUV with alpha channel (V0-U0-Y0-A0...) (Since: 1.16)
 	FormatBGR10A2LE  Format = C.GST_VIDEO_FORMAT_BGR10A2_LE  // (85) – packed 4:4:4 RGB with alpha channel(B-G-R-A), 10 bits for R/G/B channel and MSB 2 bits for alpha channel (Since: 1.16)
-	FormatRGB10A2LE  Format = C.GST_VIDEO_FORMAT_RGB10A2_LE  // (86) – packed 4:4:4 RGB with alpha channel(R-G-B-A), 10 bits for R/G/B channel and MSB 2 bits for alpha channel (Since: 1.18)
-	FormatY44416BE   Format = C.GST_VIDEO_FORMAT_Y444_16BE   // (87) – planar 4:4:4 YUV, 16 bits per channel (Since: 1.18)
-	FormatY44416LE   Format = C.GST_VIDEO_FORMAT_Y444_16LE   // (88) – planar 4:4:4 YUV, 16 bits per channel (Since: 1.18)
-	FormatP016BE     Format = C.GST_VIDEO_FORMAT_P016_BE     // (89) – planar 4:2:0 YUV with interleaved UV plane, 16 bits per channel (Since: 1.18)
-	FormatP016LE     Format = C.GST_VIDEO_FORMAT_P016_LE     // (90) – planar 4:2:0 YUV with interleaved UV plane, 16 bits per channel (Since: 1.18)
-	FormatP012BE     Format = C.GST_VIDEO_FORMAT_P012_BE     // (91) – planar 4:2:0 YUV with interleaved UV plane, 12 bits per channel (Since: 1.18)
-	FormatP012LE     Format = C.GST_VIDEO_FORMAT_P012_LE     // (92) – planar 4:2:0 YUV with interleaved UV plane, 12 bits per channel (Since: 1.18)
-	FormatY212BE     Format = C.GST_VIDEO_FORMAT_Y212_BE     // (93) – packed 4:2:2 YUV, 12 bits per channel (Y-U-Y-V) (Since: 1.18)
-	FormatY212LE     Format = C.GST_VIDEO_FORMAT_Y212_LE     // (94) – packed 4:2:2 YUV, 12 bits per channel (Y-U-Y-V) (Since: 1.18)
-	FormatY412BE     Format = C.GST_VIDEO_FORMAT_Y412_BE     // (95) – packed 4:4:4:4 YUV, 12 bits per channel(U-Y-V-A...) (Since: 1.18)
-	FormatY412LE     Format = C.GST_VIDEO_FORMAT_Y412_LE     // (96) – packed 4:4:4:4 YUV, 12 bits per channel(U-Y-V-A...) (Since: 1.18)
-	FormatNV124L4    Format = C.GST_VIDEO_FORMAT_NV12_4L4    // (97) – NV12 with 4x4 tiles in linear order.
-	FormatNV1232L32  Format = C.GST_VIDEO_FORMAT_NV12_32L32  // (98) – NV12 with 32x32 tiles in linear order.
+	// FormatRGB10A2LE  Format = C.GST_VIDEO_FORMAT_RGB10A2_LE  // (86) – packed 4:4:4 RGB with alpha channel(R-G-B-A), 10 bits for R/G/B channel and MSB 2 bits for alpha channel (Since: 1.18)
+	// FormatY44416BE   Format = C.GST_VIDEO_FORMAT_Y444_16BE   // (87) – planar 4:4:4 YUV, 16 bits per channel (Since: 1.18)
+	// FormatY44416LE   Format = C.GST_VIDEO_FORMAT_Y444_16LE   // (88) – planar 4:4:4 YUV, 16 bits per channel (Since: 1.18)
+	// FormatP016BE     Format = C.GST_VIDEO_FORMAT_P016_BE     // (89) – planar 4:2:0 YUV with interleaved UV plane, 16 bits per channel (Since: 1.18)
+	// FormatP016LE     Format = C.GST_VIDEO_FORMAT_P016_LE     // (90) – planar 4:2:0 YUV with interleaved UV plane, 16 bits per channel (Since: 1.18)
+	// FormatP012BE     Format = C.GST_VIDEO_FORMAT_P012_BE     // (91) – planar 4:2:0 YUV with interleaved UV plane, 12 bits per channel (Since: 1.18)
+	// FormatP012LE     Format = C.GST_VIDEO_FORMAT_P012_LE     // (92) – planar 4:2:0 YUV with interleaved UV plane, 12 bits per channel (Since: 1.18)
+	// FormatY212BE     Format = C.GST_VIDEO_FORMAT_Y212_BE     // (93) – packed 4:2:2 YUV, 12 bits per channel (Y-U-Y-V) (Since: 1.18)
+	// FormatY212LE     Format = C.GST_VIDEO_FORMAT_Y212_LE     // (94) – packed 4:2:2 YUV, 12 bits per channel (Y-U-Y-V) (Since: 1.18)
+	// FormatY412BE     Format = C.GST_VIDEO_FORMAT_Y412_BE     // (95) – packed 4:4:4:4 YUV, 12 bits per channel(U-Y-V-A...) (Since: 1.18)
+	// FormatY412LE     Format = C.GST_VIDEO_FORMAT_Y412_LE     // (96) – packed 4:4:4:4 YUV, 12 bits per channel(U-Y-V-A...) (Since: 1.18)
+	// FormatNV124L4    Format = C.GST_VIDEO_FORMAT_NV12_4L4    // (97) – NV12 with 4x4 tiles in linear order.
+	// FormatNV1232L32  Format = C.GST_VIDEO_FORMAT_NV12_32L32  // (98) – NV12 with 32x32 tiles in linear order.
 )
 
 // AllFormats is a convenience function for retrieving all formats for inspection purposes.
@@ -232,63 +232,63 @@ func AllFormats() []Format {
 		FormatY410,
 		FormatVUYA,
 		FormatBGR10A2LE,
-		FormatRGB10A2LE,
-		FormatY44416BE,
-		FormatY44416LE,
-		FormatP016BE,
-		FormatP016LE,
-		FormatP012BE,
-		FormatP012LE,
-		FormatY212BE,
-		FormatY212LE,
-		FormatY412BE,
-		FormatY412LE,
-		FormatNV124L4,
-		FormatNV1232L32,
+		// FormatRGB10A2LE,
+		// FormatY44416BE,
+		// FormatY44416LE,
+		// FormatP016BE,
+		// FormatP016LE,
+		// FormatP012BE,
+		// FormatP012LE,
+		// FormatY212BE,
+		// FormatY212LE,
+		// FormatY412BE,
+		// FormatY412LE,
+		// FormatNV124L4,
+		// FormatNV1232L32,
 	}
 }
 
 // RawFormats returns a slice of all the raw video formats supported by GStreamer.
-func RawFormats() []Format {
-	var size C.guint
-	formats := C.gst_video_formats_raw(&size)
-	out := make([]Format, uint(size))
-	for i, f := range (*[1 << 30]C.GstVideoFormat)(unsafe.Pointer(formats))[:size:size] {
-		out[i] = Format(f)
-	}
-	return out
-}
+// func RawFormats() []Format {
+// 	var size C.guint
+// 	formats := C.gst_video_formats_raw(&size)
+// 	out := make([]Format, uint(size))
+// 	for i, f := range (*[1 << 30]C.GstVideoFormat)(unsafe.Pointer(formats))[:size:size] {
+// 		out[i] = Format(f)
+// 	}
+// 	return out
+// }
 
 // MakeRawCaps returns a generic raw video caps for formats defined in formats. If formats is empty or nil, returns a caps for
 // all the supported raw video formats, see RawFormats.
-func MakeRawCaps(formats []Format) *gst.Caps {
-	var caps *C.GstCaps
-	if len(formats) == 0 {
-		caps = C.gst_video_make_raw_caps(nil, C.guint(0))
-	} else {
-		caps = C.gst_video_make_raw_caps(
-			(*C.GstVideoFormat)(unsafe.Pointer(&formats[0])),
-			C.guint(len(formats)),
-		)
-	}
-	return gst.FromGstCapsUnsafe(unsafe.Pointer(caps))
-}
+// func MakeRawCaps(formats []Format) *gst.Caps {
+// 	var caps *C.GstCaps
+// 	if len(formats) == 0 {
+// 		caps = C.gst_video_make_raw_caps(nil, C.guint(0))
+// 	} else {
+// 		caps = C.gst_video_make_raw_caps(
+// 			(*C.GstVideoFormat)(unsafe.Pointer(&formats[0])),
+// 			C.guint(len(formats)),
+// 		)
+// 	}
+// 	return gst.FromGstCapsUnsafe(unsafe.Pointer(caps))
+// }
 
 // MakeRawCapsWithFeatures returns a generic raw video caps for formats defined in formats with features. If formats is
 // empty or nil, returns a caps for all the supported video formats, see RawFormats.
-func MakeRawCapsWithFeatures(formats []Format, features *gst.CapsFeatures) *gst.Caps {
-	var caps *C.GstCaps
-	if len(formats) == 0 {
-		caps = C.gst_video_make_raw_caps_with_features(nil, C.guint(0), fromCoreCapsFeatures(features))
-	} else {
-		caps = C.gst_video_make_raw_caps_with_features(
-			(*C.GstVideoFormat)(unsafe.Pointer(&formats[0])),
-			C.guint(len(formats)),
-			fromCoreCapsFeatures(features),
-		)
-	}
-	return gst.FromGstCapsUnsafe(unsafe.Pointer(caps))
-}
+// func MakeRawCapsWithFeatures(formats []Format, features *gst.CapsFeatures) *gst.Caps {
+// 	var caps *C.GstCaps
+// 	if len(formats) == 0 {
+// 		caps = C.gst_video_make_raw_caps_with_features(nil, C.guint(0), fromCoreCapsFeatures(features))
+// 	} else {
+// 		caps = C.gst_video_make_raw_caps_with_features(
+// 			(*C.GstVideoFormat)(unsafe.Pointer(&formats[0])),
+// 			C.guint(len(formats)),
+// 			fromCoreCapsFeatures(features),
+// 		)
+// 	}
+// 	return gst.FromGstCapsUnsafe(unsafe.Pointer(caps))
+// }
 
 // Info returns the FormatInfo for this video format.
 func (f Format) Info() *FormatInfo {
