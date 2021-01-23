@@ -64,7 +64,7 @@ const (
 	NavigationEventMouseButtonRelease NavigationEventType = C.GST_NAVIGATION_EVENT_MOUSE_BUTTON_RELEASE // (4) – A mouse button release event. Use gst_navigation_event_parse_mouse_button_event to extract the details from the event.
 	NavigationEventMouseMove          NavigationEventType = C.GST_NAVIGATION_EVENT_MOUSE_MOVE           // (5) – A mouse movement event. Use gst_navigation_event_parse_mouse_move_event to extract the details from the event.
 	NavigationEventCommand            NavigationEventType = C.GST_NAVIGATION_EVENT_COMMAND              // (6) – A navigation command event. Use gst_navigation_event_parse_command to extract the details from the event.
-	NavigationEventMouseScroll        NavigationEventType = C.GST_NAVIGATION_EVENT_MOUSE_SCROLL         // (7) – A mouse scroll event. Use gst_navigation_event_parse_mouse_scroll_event to extract the details from the event. (Since: 1.18)
+	//NavigationEventMouseScroll        NavigationEventType = C.GST_NAVIGATION_EVENT_MOUSE_SCROLL         // (7) – A mouse scroll event. Use gst_navigation_event_parse_mouse_scroll_event to extract the details from the event. (Since: 1.18)
 )
 
 // NavigationMessageType is a set of notifications that may be received on the bus when navigation
@@ -201,10 +201,10 @@ func (n *gstNavigation) SendMouseEvent(event MouseEvent, button int, x, y float6
 }
 
 func (n *gstNavigation) SendMouseScrollEvent(x, y, dX, dY float64) {
-	C.gst_navigation_send_mouse_scroll_event(
-		n.instance(),
-		C.double(x), C.double(y), C.double(dX), C.double(dY),
-	)
+	// C.gst_navigation_send_mouse_scroll_event(
+	// 	n.instance(),
+	// 	C.double(x), C.double(y), C.double(dX), C.double(dY),
+	// )
 }
 
 // NavigationEvent extends the Event from the core library and is used by elements
